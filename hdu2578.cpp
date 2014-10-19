@@ -21,9 +21,9 @@ int main() {
                 mid = (left + right) / 2;
                 if (a[mid] == ser) {
                     count++;
-					// 之前这一点没考虑，一直WA 
-					if (i != 0 && a[i] == a[i-1]) {
-            		    count--;
+		        // 之前这一点没考虑，一直WA 
+			if (i != 0 && a[i] == a[i-1]) {
+            		count--;
             	    }
                     break;
                 } else if (a[mid] > ser){

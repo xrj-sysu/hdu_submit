@@ -13,7 +13,7 @@ int ans[1005];
 
 void RMQ_ST() {
     int i, j, p, q;
-    int temp = (int)(log((double)n)/log(2.0));
+    int temp = (int)(log((double)n) / log(2.0));
     for (i = 0; i < n; ++i) {
         f[i][0] = i;
     }
@@ -30,7 +30,7 @@ void RMQ_ST() {
     }
 }
 int query(int l, int r) {
-    int temp = (int)(log((double)(r-l+1))/log(2.0));
+    int temp = (int)(log((double)(r-l+1)) / log(2.0));
     int p = f[l][temp];
     int q = f[r-(1<<temp)+1][temp];
     if (num[p] <= num[q]) {
@@ -51,9 +51,10 @@ int main() {
         RMQ_ST();
         i = 0;
         j = 0;
-        while (m--) {
+        while (m) {
             i = query(i, n - m);
             ans[j++] = num[i++];
+            m--;
         }
         for (i = 0; i < j; ++i) {
             if (ans[i] != 0) {
